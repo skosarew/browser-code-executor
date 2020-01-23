@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Hello django</title>
+</head>
+<body>
+    <h1>{{ header }}</h1>
+    <p>Name: {{ user.name}} Age: {{user.age}}</p>
+    <p>Address: ул. {{address.0}}, д. {{address.1}}, кв. {{address.2}}</p>
+    <p>Langs: {{langs.0}}, {{langs.1}}</p>
+    <h1>Another image</h1>
+    <img src="{% static "images/devs.jpg" %}" alt="Battle" >
+</body>
+</html>
