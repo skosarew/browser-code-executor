@@ -1,4 +1,0 @@
-django
-gunicorn==20.0.2
-
-celery

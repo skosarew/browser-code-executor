@@ -1,0 +1,66 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Browser code executor</title>
+    <link rel="stylesheet"
+          href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/executor.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"
+          rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'css/styles/default.css' %}">
+    <script src="{% static 'js/highlight.min.js' %}"></script>
+    <script src="https://unpkg.com/monaco-editor@0.12.0/min/vs/loader.js"></script>
+    <script src="{% static 'js/monaco-editor.js' %}"></script>
+    <script src="{% static 'js/main_script.js' %}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<div class="page-header">
+    <h1><a href="/">Browser code executor</a></h1>
+</div>
+
+
+<div class="content container">
+    <div class="leftpane">
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div id="code-container">
+            </div>
+
+            {{ form.user_code }}
+
+            <div class='console'>
+                <div class='console-inner'>
+                    <div class='output-cmd'>{{ form.code_console }}</div>
+                </div>
+            </div>
+
+
+            <input id="code_submit" type="submit" value="Run"
+                   onclick="refresh_code()">
+        </form>
+    </div>
+
+
+    <div class="rightpane">
+
+        <textarea class="out" id="result_out" name="text"
+                  readonly="readonly" placeholder='Code execution result'
+        >{{ out_ans }}</textarea>
+
+        <p><textarea class="out_err" id="error_out" rows="5" cols="45"
+                     name="text" readonly="readonly"
+         placeholder='Output errors'>{{ out_err }}</textarea></p>
+    </div>
+
+</div>
+</body>
+</html>

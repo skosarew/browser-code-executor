@@ -1,11 +1,18 @@
 # browser-code-executor
 
-This application represents simple browser code executor.
+It is final task from EPAM training center. Application represents simple 
+browser code executor that is written by using django framework.
 
-## To start do the following:
+### Installation:
 
-docker build -t browser-executor .
+$ docker-compose -f docker-compose.prod.yml up -d --build
 
-docker run -it --publish=8000:8000 browser-executor
+### Rebuild:
 
-python3 manage.py runserver 0.0.0.0:8000
+$ docker-compose down -v
+$ docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
+$ docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
+
+### Verification 
+
+http://localhost:1337/
