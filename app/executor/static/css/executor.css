@@ -5,13 +5,9 @@
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    /*color: #FFDE40;*/
+    color: #fff;
     font-size: 36pt;
     text-decoration: none;
-}
-
-.content {
-    /*margin-left: 40px;*/
 }
 
 h1, h2, h3, h4 {
@@ -19,7 +15,7 @@ h1, h2, h3, h4 {
 }
 
 body {
-    overflow:hidden;
+    overflow: hidden;
     width: 100%;
     background-color: #FFDE40;
 }
@@ -71,7 +67,6 @@ body {
     position: relative;
     font-family: monospace, monospace;
     background-color: #C9F76F;
-    /*overflow-y: auto;*/
     width: 65%;
     height: 15%;
     margin: 1em 0em 1em 0em;
@@ -83,7 +78,6 @@ body {
     line-height: 1.5;
     resize: none;
 }
-
 
 
 .console {
@@ -116,12 +110,6 @@ body {
     -moz-appearance: none;
     min-width: calc(100% - 2em);
     resize: none;
-}
-
-.console-input:before {
-    content: '> ';
-    color: #FC3565;
-    vertical-align: top;
 }
 
 

@@ -27,13 +27,6 @@ DEBUG = int(os.environ.get("DEBUG", default=0))
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS",
                                '127.0.0.1 0.0.0.0 [::1]').split(" ")
 
-# ALLOWED_HOSTS = os.environ.get('localhost 127.0.0.1 [::1]').split(" ")
-# DEBUG = os.environ.get('DJANGO_DEBUG', "True") == "True"
-# ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '127.0.0.1 '
-#                                                        '0.0.0.0').split()
-
-print(ALLOWED_HOSTS)
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -120,8 +113,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 STATIC_URL = "/staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
