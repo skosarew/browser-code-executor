@@ -18,3 +18,7 @@ $ docker-compose -f docker-compose.prod.yml exec web python manage.py collectsta
 ### Verification 
 
 http://localhost:1337/
+
+### appearance
+
+![Пример работы](https://raw.githubusercontent.com/skosarew/browser-code-executor/master/appearance.png)
