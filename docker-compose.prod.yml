@@ -5,7 +5,8 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile.prod
-    command: gunicorn mysite.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn -c /home/app/web/gunicorn_conf.py mysite.wsgi:application
+#    command: gunicorn mysite.wsgi:application --bind 0.0.0.0:8000 --access-logfile /home/app/web/gunicorn-access.log --log-file /home/app/web/gunicorn-error.log -w 1 --threads 12
     volumes:
       - static_volume:/home/app/web/staticfiles
     expose:

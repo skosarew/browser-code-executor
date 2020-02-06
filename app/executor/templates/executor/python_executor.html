@@ -46,6 +46,7 @@
 
             <input id="code_submit" type="submit" value="Run"
                    onclick="refresh_code()">
+            <div>{{ form.timeout }}</div>
         </form>
     </div>
 
@@ -58,9 +59,8 @@
 
         <p><textarea class="out_err" id="error_out" rows="5" cols="45"
                      name="text" readonly="readonly"
-         placeholder='Output errors'>{{ out_err }}</textarea></p>
+                     placeholder='Output errors'>{{ out_err }}</textarea></p>
     </div>
-
 </div>
 </body>
 </html>

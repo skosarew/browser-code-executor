@@ -1,6 +1,0 @@
-docker-compose down -v
-docker ps
-docker exec -it 8341cf448e3b /bin/sh
-cp -rd /usr/src/app/staticfiles/* .
-
-docker-compose -f docker-compose.prod.yml up -d --build
